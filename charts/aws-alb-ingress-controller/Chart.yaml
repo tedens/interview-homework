@@ -1,0 +1,9 @@
+apiVersion: v2
+name: aws-alb-chart
+version: 1.0.0
+description: AWS ALB chart for recruiter assignment.
+
+dependencies:
+  - name: aws-load-balancer-controller
+    version: 1.4.0
+    repository: https://aws.github.io/eks-charts

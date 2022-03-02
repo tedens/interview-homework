@@ -1,0 +1,8 @@
+aws-load-balancer-controller:
+  replicaCount: 2
+  clusterName: test-eks-pHc9C2nK
+  serviceAccount:
+    name: alb-controller
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::446772786641:role/alb-ingress-role
+  ingressClass: hw-alb

@@ -1,0 +1,35 @@
+# Default values for graph-api.
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+
+service:
+  type: NodePort
+  port: 80
+
+ingress:
+  enabled: true
+  className: hw-alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/group.name: default
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+  hosts:
+    - host: graph.ourfirm.ai
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+# Outside scope of interview question
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
