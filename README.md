@@ -31,4 +31,4 @@ Be sure to update clusterName in values.yaml
 `helm  install graph-api -n hw .`
 
 # Get alb urls
-`kubectl get svc -n hw`
+`kubectl get ingress -n hw`
