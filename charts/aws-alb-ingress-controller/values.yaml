@@ -1,6 +1,6 @@
 aws-load-balancer-controller:
-  replicaCount: 2
-  clusterName: test-eks-pHc9C2nK
+  replicaCount: 1
+  clusterName: test-eks-XBeaLeG2
   serviceAccount:
     name: alb-controller
     annotations:

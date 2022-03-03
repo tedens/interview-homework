@@ -26,7 +26,7 @@ module "eks" {
       max_capacity     = 3
       min_capacity     = 1
 
-      instance_types = ["m5.large"]
+      instance_types = ["t3.medium"]
       capacity_type  = "ON_DEMAND"
       k8s_labels = {
         Environment = "dev"
